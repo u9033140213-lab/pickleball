@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickleball Progress Pack - Free 8-Week Toolkit for 2.5 to 3.5 Players</title>
+    <meta name="description" content="Free printable PDFs, KPI logs, and video-backed drills that help you go from 2.5 to 3.5 playing smarter, not harder.">
+    <!-- Aggiorno palette e aggiungo video inline -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent-color: #16A34A;
+            --accent-hover: #0c8888;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #6a6a6a;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --border-color: #e0e0e0;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --court-blue: #0A4C86;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--accent-color);
+            color: var(--bg-white);
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        /* Video di sfondo nell'hero (solo il video è ruotato) */
+        .hero { position: relative; overflow: hidden; background-image: linear-gradient(135deg, rgba(248, 249, 250, 0.55) 0%, rgba(255, 255, 255, 0.75) 100%), url('/images/venti-views-UfnsQzOGLu8-unsplash.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+        .hero-video-bg { position: absolute; inset: 0; z-index: -1; }
+        .hero-video-bg video {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%) rotate(90deg);
+          transform-origin: center;
+          width: 140%;
+          height: 140%;
+          object-fit: cover;
+        }
+        /* Hide native media controls for background hero video only */
+        .hero-video-bg video::-webkit-media-controls-enclosure { display: none !important; }
+        .hero-video-bg video::-webkit-media-controls { display: none !important; }
+        .hero-video-bg video::-moz-media-controls { display: none !important; }
+        .hero-video-bg video::-ms-media-controls { display: none !important; }
+        /* Mobile nav toggle visibility */
+        .mobile-menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-dark); }
+        @media (max-width: 768px) {
+          nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background-color: var(--bg-white); border-bottom: 1px solid var(--border-color); padding: 12px 16px; gap: 8px; }
+          nav.active ul { display: flex; }
+          .mobile-menu-toggle { display: inline-block; }
+        }
+        @media (max-width: 768px) {
+  .hero-inline-video video { max-width: 100%; }
+  .hero { padding: 80px 0 60px; }
+  .hero-content { grid-template-columns: 1fr; gap: 40px; }
+  .hero-text h1 { font-size: 36px; }
+  .hero-text .subheadline { font-size: 18px; }
+  .hero-cta { flex-direction: column; }
+  .btn { width: 100%; }
+  section { padding: 60px 0; }
+  h2 { font-size: 28px; }
+  .toolkit-grid { grid-template-columns: 1fr; }
+  .footer-content { grid-template-columns: 1fr; }
+}
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .hero-text .subheadline {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Pickleball Progress Pack</div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">☰</button>
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="#toolkit">Toolkit</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="#strategy-hub">Strategy Hub</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-video-bg">
+                <video autoplay muted loop playsinline preload="none" poster="/images/pexels-lindsey-flynn-494668519-19642670.jpg">
+                    <source src="videos/hero_1080p.mp4" type="video/mp4">
+                    <source src="videos/hero-landscape.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Your 8-Week Pickleball Progress Pack</h1>
+                        <p class="subheadline">Free printable PDFs, KPI logs, and video-backed drills that help you go from 2.5 to 3.5 playing smarter, not harder.</p>
+                        <p>If you bought the book, this is where you turn pages into real on-court progress. Plan sessions, track KPIs, use diagrams, and reinforce key patterns with tools built to fit your busy schedule.</p>
+                        <div class="hero-cta">
+                            <a href="#toolkit" class="btn">Download Your Free Toolkit</a>
+                            <a href="#how-it-works" class="btn btn-secondary">Explore the Resources</a>
+                        </div>
+                        <p class="hero-note">No spam. No upsells. Just practical tools to help you improve, week by week.</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="placeholder-hero.jpg" alt="Adult pickleball doubles players at the non-volley line ready for the next shot">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="toolkit">
+            <div class="container">
+                <h2>What's Inside Your Free Toolkit</h2>
+                <p class="section-intro">Every resource is designed to work with the 8-week plan: printable, practical, and easy to use right after a session.</p>
+
+                <div class="toolkit-grid">
+                    <div class="toolkit-card">
+                        <h3>Full Printable KPI Logs</h3>
+                        <p>Track weekly sessions, match outcomes, and key stats like drops made, resets won, and NVZ errors over the 8 weeks. See your progress in real numbers.</p>
+                        <a href="pdfs/Full%20Printable%20KPI%20Logs.pdf" class="btn" download target="_blank" rel="noopener" aria-label="Download Full Printable KPI Logs PDF">Download PDF</a>
+                    </div>
+
+                    <div class="toolkit-card">
+                        <h3>8-Week Session Planner</h3>
+                        <p>Schedule short, focused sessions (20-40 minutes) week by week, aligned with the book's progression. Make practice fit your real life.</p>
+                        <a href="pdfs/8-Week%20Progress%20Planner%20SINGLE%20WEEKS.pdf" class="btn" download target="_blank" rel="noopener" aria-label="Download 8-Week Session Planner PDF">Download PDF</a>
+                    </div>
+
+                    <div class="toolkit-card">
+                        <h3>Partner Communication Templates</h3>
+                        <p>Quick prompts and templates to align with your partner on roles, stacking basics, and coverage.</p>
+                        <a href="pdfs/Partner%20Communication%20Templates.pdf" class="btn" download target="_blank" rel="noopener" aria-label="Download Partner Communication Templates PDF">Download PDF</a>
+                    </div>
+
+                    <div class="toolkit-card">
+                        <h3>Edge Case Reference Cards</h3>
+                        <p>Simple decision helpers for tricky rules and scoring edge cases. Stop guessing, play confidently.</p>
+                        <a href="pdfs/Edge%20Case%20Reference%20Cards.pdf" class="btn" download target="_blank" rel="noopener" aria-label="Download Edge Case Reference Cards PDF">Download PDF</a>
+                    </div>
+
+                    <div class="toolkit-card">
+                        <h3>Pre-Match Warm-Up Gear</h3>
+                        <p>Fast, practical checklist and routine to get ready safely before playing.</p>
+                        <a href="pdfs/Pre-Match%20Warm-Up%20Gear.pdf" class="btn" download target="_blank" rel="noopener" aria-label="Download Pre-Match Warm-Up Gear PDF">Download PDF</a>
+                    </div>
+
+                    <div class="toolkit-card">
+                        <h3>Post-Game Recovery Notes</h3>
+                        <p>Short recovery notes and prompts to reinforce what you learned and protect your body.</p>
+                        <a href="pdfs/Post-Game%20Recovery%20Notes.pdf" class="btn" download target="_blank" rel="noopener" aria-label="Download Post-Game Recovery Notes PDF">Download PDF</a>
+                    </div>
+
+                    <div class="toolkit-card">
+                        <h3>Injury-Smart Mobility</h3>
+                        <p>A realistic mobility guide focused on prevention for shoulders, elbows, and knees.</p>
+                        <a href="pdfs/Injury-Smart%20Mobility.pdf" class="btn" download target="_blank" rel="noopener" aria-label="Download Injury-Smart Mobility PDF">Download PDF</a>
+                    </div>
+                </div>
+
+                <p class="toolkit-note">You can print these pages or fill them on a tablet. Use whatever fits your routine best.</p>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2>How to Use This Toolkit With Your 8-Week Plan</h2>
+                <p class="section-intro">The toolkit is built to plug directly into the book's week-by-week progression.</p>
+
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Before Each Week Starts</h3>
+                        <p>Open the 8-Week Session Planner and schedule realistic sessions around work and family. Pick drills from the book that match that week's focus. Be honest about how much time you actually have.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>During Each Session</h3>
+                        <p>Bring the drill tracking sheets and diagrams. Work on a small number of focused drills. Mark reps, success rates, or rally counts. Avoid random hitting. Quality beats quantity.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>After You Play</h3>
+                        <p>Log matches and notes in the KPI logs. Track patterns like errors in transition, losing to bangers, or NVZ mistakes. Use these data points to choose which drills to emphasize next week.</p>
+                    </div>
+                </div>
+
+                <div class="closing-note">
+                    <p>Small, consistent, measured improvements across 8 weeks are how a 2.5 player becomes a confident 3.0 to 3.5. Trust the process.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="videos">
+            <div class="container">
+                <h2>On-Court Video Library</h2>
+                <p class="section-intro">Some concepts are easier to see than to read. This library complements the diagrams and drills from the book.</p>
+
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Serve & Return Fundamentals" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Serve & Return Fundamentals</h3>
+                            <p>Master the consistency and placement that sets up every point. See how depth, spin, and target zones work in real play.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Third-Shot Drop & Drive Patterns" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Third-Shot Drop & Drive Patterns</h3>
+                            <p>Watch the decision points between drops and drives. Learn how to move forward together as a team and when to speed up.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Reset & Dink Game Under Pressure" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Reset & Dink Game Under Pressure</h3>
+                            <p>See how to absorb pace with resets and control the NVZ with patient dinking. These skills separate 3.0 from 2.5 players.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" title="Injury-Smart Warm-Up Routine" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Injury-Smart Warm-Up Routine</h3>
+                            <p>Follow a practical 5-minute warm-up that protects your shoulders, elbows, and knees. Stay on the court longer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="video-note">These are short, practical clips. Watch them before or after your session, not during, so you can stay focused on the court.</p>
+            </div>
+        </section>
+
+        <section id="strategy-hub" class="strategy-hub">
+            <div class="container">
+                <h2>Strategy & Tips Hub</h2>
+                <p class="section-intro">Quick, practical answers to common problems between 2.5 and 3.5, especially around doubles play and bangers.</p>
+
+                <div class="strategy-grid">
+                    <details class="strategy-item">
+                        <summary>How to Handle Bangers Without Changing Your Whole Game</summary>
+                        <div class="strategy-content">
+                            <p>You do not need to become a banger to beat bangers. Focus on these adjustments:</p>
+                            <ul>
+                                <li>Slightly close your paddle angle to redirect pace downward instead of popping it up.</li>
+                                <li>Make contact in front of your body so you can control the ball instead of reacting late.</li>
+                                <li>Soften your grip slightly to absorb pace rather than meeting force with force.</li>
+                                <li>Use resets to bring the ball down softly into the kitchen. Do not panic and drive it back hard.</li>
+                            </ul>
+                            <p>Practice these patterns in your drill sessions so they feel automatic during matches. Track your reset success rate in your KPI logs.</p>
+                        </div>
+                    </details>
+
+                    <details class="strategy-item">
+                        <summary>Smart Doubles Positioning and Stacking Basics</summary>
+                        <div class="strategy-content">
+                            <p>Good doubles positioning keeps you and your partner connected as you move forward together:</p>
+                            <ul>
+                                <li>Stay side by side as much as possible. Avoid one player at the NVZ and one at the baseline.</li>
+                                <li>Move together toward the kitchen after the serve and return. Do not leave your partner stranded.</li>
+                                <li>Basic stacking lets both players protect their strong forehands. Start simple: stack only on one side if you are new to it.</li>
+                                <li>Communicate clearly before the point starts so both players know who covers which side.</li>
+                            </ul>
+                            <p>The Third-Shot & Reset Pattern Diagrams PDF shows these movements visually. Review them before your session.</p>
+                        </div>
+                    </details>
+
+                    <details class="strategy-item">
+                        <summary>Court Etiquette on Crowded Public Courts</summary>
+                        <div class="strategy-content">
+                            <p>Public courts can be busy. Here is how to play well with others:</p>
+                            <ul>
+                                <li>Rotate in and out fairly. If courts are packed, play one game and let the next group on.</li>
+                                <li>Communicate with new partners before the point. Keep it simple: "I will take the middle" or "You serve first."</li>
+                                <li>Handle mixed-level games respectfully. If you are the stronger player, focus on placement and consistency instead of overpowering weaker players.</li>
+                                <li>Return stray balls quickly and call "ball on court" loudly if a ball rolls onto your court during a point.</li>
+                            </ul>
+                            <p>Good etiquette makes everyone want to play with you again. That means more reps and faster progress.</p>
+                        </div>
+                    </details>
+
+                    <details class="strategy-item">
+                        <summary>When to Push for 3.5 — and How to Know You're Ready</summary>
+                        <div class="strategy-content">
+                            <p>Use objective signs instead of gut feeling to know when you are ready for 3.5:</p>
+                            <ul>
+                                <li>Consistency of serve and return: you can place 8 out of 10 serves deep and hit 8 out of 10 returns past the NVZ.</li>
+                                <li>Ability to execute third-shot patterns: you can drop or drive intentionally and move forward together with your partner.</li>
+                                <li>Reset success: you can absorb pace and bring the ball down softly at least 6 out of 10 times under pressure.</li>
+                                <li>NVZ control: you can dink patiently, recognize attackable balls, and avoid unforced errors at the kitchen line.</li>
+                                <li>Match outcomes: you win consistently against typical 3.0 players and compete closely with 3.5 players.</li>
+                            </ul>
+                            <p>Review your KPI logs after week 8. If your numbers show consistent improvement in these areas, you are ready.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About the Book</h2>
+                <p>This companion site supports the book "Pickleball 2.5 to 3.5 in 8 Weeks," a practical, zero-fluff playbook for adult recreational players who want measurable progress without living on the courts.</p>
+
+                <p>The book provides:</p>
+                <ul>
+                    <li>A clear 8-week roadmap with week-by-week focus areas and realistic session lengths.</li>
+                    <li>Drill progressions tied to real match skills: serve, return, third-shot, resets, and dinks.</li>
+                    <li>Modern doubles strategies including how to handle bangers, basic stacking, and smart positioning.</li>
+                    <li>KPIs and tracking tools so you measure progress instead of guessing.</li>
+                    <li>Injury-smart routines that help prevent common overuse issues in shoulders, elbows, and knees. This is prevention-oriented guidance, not medical treatment.</li>
+                    <li>Technique breakdowns in plain language with visual diagrams, not jargon.</li>
+                </ul>
+
+                <p>The approach is simple: play smarter, not just harder. Focus on measurable improvements in the skills that matter most in doubles. Build a sustainable practice routine that fits your real life.</p>
+
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2>FAQ</h2>
+
+                <div class="faq-grid">
+                    <details class="faq-item">
+                        <summary>Is this toolkit really free?</summary>
+                        <div class="faq-content">
+                            <p>Yes. If you bought the book, you get full access to these resources at no extra cost. No hidden fees, no subscriptions.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Do I have to create an account to download the PDFs?</summary>
+                        <div class="faq-content">
+                            <p>No. You can download them directly from this page. Optionally, you may join the email list at the bottom of the page for future updates, but it is not required to access the toolkit.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can I use this toolkit without the book?</summary>
+                        <div class="faq-content">
+                            <p>You will get some value from the drill sheets and diagrams on their own, but they are designed to work best alongside the explanations and week-by-week structure in the book. The book provides the context and progression that makes these tools most effective.</p>
+                        </div>
+                    </details>
+
+
+
+
+
+                    <details class="faq-item">
+                        <summary>Is this medical or rehab advice?</summary>
+                        <div class="faq-content">
+                            <p>No. The warm-up and injury-smart content is general educational information only and is not a substitute for professional medical advice, diagnosis, or treatment. If you have pain or a specific injury, consult a qualified healthcare provider before starting any exercise program.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Pickleball Progress Pack</h3>
+                    <p>A companion resource for readers of "Pickleball 2.5 to 3.5 in 8 Weeks."</p>
+                    <p>Questions? Email us at <a href="mailto:pickleball2.5to3.5@gmail.com">pickleball2.5to3.5@gmail.com</a></p>
+                </div>
+
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pickleball 2.5 to 3.5 in 8 Weeks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
