@@ -123,7 +123,6 @@
         @media (max-width: 768px) {
   .hero-inline-video video { max-width: 100%; }
   .hero { padding: 80px 0 60px; }
-  .hero { background-image: linear-gradient(135deg, rgba(248, 249, 250, 0.55) 0%, rgba(255, 255, 255, 0.75) 100%), url('/images/hero-mobile.jpg'); }
   .hero-content { grid-template-columns: 1fr; gap: 40px; }
   .hero-text h1 { font-size: 36px; }
   .hero-text .subheadline { font-size: 18px; }
@@ -133,10 +132,11 @@
   h2 { font-size: 28px; }
   .toolkit-grid { grid-template-columns: 1fr; }
   .footer-content { grid-template-columns: 1fr; }
-  .hero-video-bg { display: none; }
+  .hero-video-bg { display: block; }
+  .hero-video-bg video { left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(90deg); transform-origin: center; }
 }
-        .mobile .hero { background-image: linear-gradient(135deg, rgba(248, 249, 250, 0.55) 0%, rgba(255, 255, 255, 0.75) 100%), url('/images/hero-mobile.jpg'); }
-        .mobile .hero-video-bg { display: none; }
+        .mobile .hero-video-bg { display: block; }
+        .mobile .hero-video-bg video { left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(90deg); transform-origin: center; }
 
         @media (max-width: 480px) {
             .hero-text h1 {
@@ -489,6 +489,28 @@
         (function(){
           var isMobileUA = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
           if (isMobileUA) { document.documentElement.classList.add('mobile'); }
+          function fitRotated() {
+            var v = document.querySelector('.hero-video-bg video');
+            var c = document.querySelector('.hero');
+            if (!v || !c) return;
+            var cw = c.clientWidth;
+            var ch = c.clientHeight;
+            var vw = v.videoWidth;
+            var vh = v.videoHeight;
+            if (!vw || !vh) return;
+            var k = Math.max(cw / vh, ch / vw);
+            v.style.width = (vw * k) + 'px';
+            v.style.height = (vh * k) + 'px';
+            v.style.left = '50%';
+            v.style.top = '50%';
+            v.style.transform = 'translate(-50%, -50%) rotate(90deg)';
+            v.style.transformOrigin = 'center';
+          }
+          var vid = document.querySelector('.hero-video-bg video');
+          if (vid) {
+            vid.addEventListener('loadedmetadata', function(){ if (isMobileUA || window.matchMedia('(max-width: 768px)').matches) fitRotated(); });
+          }
+          window.addEventListener('resize', function(){ if (isMobileUA || window.matchMedia('(max-width: 768px)').matches) fitRotated(); });
         })();
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navMenu = document.getElementById('nav-menu');
