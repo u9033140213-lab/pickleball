@@ -4,6 +4,7 @@ import './App.css';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const heroRef = useRef<HTMLDivElement>(null);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
@@ -63,6 +64,14 @@ export default function App() {
     };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 768px)');
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -145,23 +154,25 @@ export default function App() {
 
       <main>
         <section className="hero" ref={heroRef}>
-          <video
-            className="hero-video"
-            ref={heroVideoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            controls={false}
-            controlsList="nodownload noplaybackrate nofullscreen"
-            onLoadedMetadata={handleHeroVideoLoaded}
-            poster="images/pexels-lindsey-flynn-494668519-19642670.jpg"
-            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-          >
-            <source src="videos/hero_1080p.mp4" type="video/mp4" />
-          </video>
-          <div className="hero-mobile-image" aria-hidden="true">
+          {!isMobile && (
+            <video
+              className="hero-video"
+              ref={heroVideoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              controls={false}
+              controlsList="nodownload noplaybackrate nofullscreen"
+              onLoadedMetadata={handleHeroVideoLoaded}
+              poster="images/pexels-lindsey-flynn-494668519-19642670.jpg"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
+            >
+              <source src="videos/hero_1080p.mp4" type="video/mp4" />
+            </video>
+          )}
+          <div className="hero-mobile-image" aria-hidden="true" style={{ display: isMobile ? 'block' : 'none' }}>
             <img src="images/hero-mobile.jpg" alt="Pickleball mobile background" />
           </div>
           <div className="container">
