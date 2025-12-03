@@ -161,6 +161,9 @@ export default function App() {
           >
             <source src="videos/hero_1080p.mp4" type="video/mp4" />
           </video>
+          <div className="hero-mobile-image" aria-hidden="true">
+            <img src="images/hero-mobile.jpg" alt="Pickleball mobile background" />
+          </div>
           <div className="container">
             <div className="hero-content">
               <div className="hero-text" style={{
