@@ -68,7 +68,8 @@ export default function App() {
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 768px)');
-    const update = () => setIsMobile(mq.matches);
+    const isMobileUA = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    const update = () => setIsMobile(mq.matches || isMobileUA);
     update();
     mq.addEventListener('change', update);
     return () => mq.removeEventListener('change', update);
